@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/register.js" defer></script>
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/register2.css">
+    <title>Registration</title>
+</head>
+<!--body background simple, just like apple systesms colour-->
+
+<body>
+    <header>
+        <h1>WELCOME TO SWEETLIFE</h1>
+        <h2>Indulge in Every Scoop, Sweetening Life's Moments</h2>
+        <!--nav bar for all pages-->
+        <br>
+        <nav class="nav">
+            <ul class="nav">
+                <li>
+                    <a href="index.html">INDEX</a>
+                    <!-- feature number 1 -->
+                </li>
+                <li>
+                    <a class="currentpage" href="register.html">REGISTRATION </a>
+                </li>
+                <li>
+                    <a href="order.html">ORDER </a>
+                </li>
+                <li>
+                    <a href="feature.html">FEATURES</a>
+                </li>
+            </ul>
+        </nav>
+        <BR>
+    </header>
+    <!--On submit return validate: validate the requiremnt-->
+    <form id="regform" method="POST" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php"
+        onsubmit="return validate()">
+        <fieldset>
+            <legend>Sign Up!</legend>
+            <div class="textinput">
+                <label for="email" >Email</label>
+                <input id="email" type="text" name="email" placeholder="Adams@gmail.com"/>
+            </div>
+            <div class="textinput">
+                <label for="pwd1">Password</label>
+                <input id="pwd1" type="password" name="pwd1" placeholder="Must includes upper and lowercase letter."/>
+            </div>
+            <div class="textinput">
+                <label for="pwd2">Retype Password</label>
+                <input id="pwd2" type="password" name="pwd2" placeholder="Must includes upper and lowercase letter." />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend class="gettoknowyou">Get to know you</legend>
+            <div class="textinput">
+                <label for="uname">Name</label>
+                <input id="uname" type="text" name="uname" placeholder="Adam Brooklyn Charles"/>
+            </div>
+            <div class="radioinput">
+                <fieldset class="gender">
+                    <legend>Gender</legend>
+                    <input id="genm" type="radio" name="gender" value="M" />
+                    <label for="genm">Male</label>
+                    <input id="genf" type="radio" name="gender" value="F" />
+                    <label for="genf">Female</label>
+                    <input id="gen" type="radio" name="gender" value="N" />
+                    <label for="gen">N/A</label>
+    
+                </fieldset>
+            </div>
+            <!-- checkbox input element -->
+            <div class="checkbox">
+                <h3>Favourite:</h3>
+                <input id="fav1" type="checkbox" name="fav1" value="vanilla">
+                <label class="fav1" for="fav1"><strong>Classic Vanilla.</strong></label>
+                <input id="fav2" type="checkbox" name="fav2" value="choco">
+                <label for="fav2"> <strong> Chocolate. </strong> </label>
+                <input id="fav3" type="checkbox" name="fav3" value="straw">
+                <label for="fav3"><strong>Strawberry.</strong></label>
+            </div>
+        </fieldset>
+        <div class="buttoninput">
+            <input type="submit" value="Submit!" />
+        </div>
+    </form>
+    <footer>
+        <p>© 2023 Sweet Life. All rights reserved. 224, San Serif Rd, London</p>
+    </footer>
+</body>
+    

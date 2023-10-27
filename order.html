@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/order.css">
+    <link rel="stylesheet" href="./css/order2.css"> 
+    <script src="./js/order.js" defer></script>
+    <title>Order</title>
+</head>
+<!--body background simple, just like apple systesms colour-->
+
+<body class="welc" id="welc">
+    <header>
+        <h1>WELCOME TO SWEETLIFE</h1>
+        <h2>Indulge in Every Scoop, Sweetening Life's Moments</h2>
+        <!--nav bar for all pages-->
+        <br>
+        <nav class="nav">
+            <ul class="nav">
+                <li>
+                    <a href="index.html">INDEX</a>
+                    <!-- feature number 1 -->
+                </li>
+                <li>
+                    <a href="register.html">REGISTRATION </a>
+                </li>
+                <li>
+                    <a class="currentpage" href="order.html">ORDER </a>
+                </li>
+                <li>
+                    <a href="feature.html">FEATURES</a>
+                </li>
+            </ul>
+        </nav>
+        <BR>
+    </header>
+
+    <form id="regform2" method="POST" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php"  onsubmit="return validateForm()">
+        <!--Feature 2-->
+        <div>
+            <label for="deliveryOrPickup">Delivery or Pickup:</label>
+            <select name="deliveryOrPickup" id="deliveryOrPickup" onchange="toggleSections()">
+                <option value="delivery">Delivery</option>
+                <option value="pickup">Pickup</option>
+            </select>
+        </div>
+
+        <fieldset>
+        <legend class="Contact" > Contact Details</legend>
+        <div id="Name">
+            <label for="Nameorder">Name:</label>
+            <input type="text" name="Nameorder" id="Nameorder" placeholder="Adam Chales Brookes"><br>
+        </div>
+        <div id="deliveryAddress">
+            <label for="deliveryAddressInput">Delivery Address:</label>
+            <input type="text" name="deliveryAddressInput" id="deliveryAddressInput" placeholder="Street,City,ZIP,Country"><br>
+        </div>
+    
+        <div id="billingAddress">
+            <label for="billingAddressInput">Billing Address:</label>
+            <input type="text" name="billingAddressInput" id="billingAddressInput" placeholder="Street,City,ZIP,Country"><br>
+        </div>
+        <!-- Checkbox for "Delivery same as billing" -->
+        <fieldset>
+            <div id="deliverySameAsBilling">
+                <input type="checkbox" id="sameAsBilling" onchange="toggleBillingAddress()"> <label for="sameAsBilling">Billing address
+                    is same as delivery address.</label>
+
+            </div>
+        </fieldset>
+    
+        <div>
+            <label for="contactNumber">Contact Number:</label>
+            <input type="text" name="contactNumber" id="contactNumber" pattern="[0-9]+" placeholder=+61_12345678
+                title="Contact number cannot start with an alphabet"><br>
+        </div>
+    
+        <div>
+            <label for="email">Email for Receipt:</label>
+            <input type="email" name="email" id="email" placeholder="Adam@gmail.com" pattern=[^@]+@[^@]+\.[a-zA-Z]{2,} title="Invalid email format"><br>
+        </div>
+        </fieldset>
+    
+        <div>
+            <label for="payOption">Payment Option:</label>
+            <select name="payOption" id="payOption" onchange="togglePaymentDetails()">
+                <option value="online">Pay Online</option>
+                <option value="pickup">Pay on Pickup/Delivery</option>
+                
+            </select>
+        </div>
+
+        <fieldset id="creditCardDetails">
+        <div>
+            <!-- Accepted card logos insert images -->
+            <img src="./images/american_express.png" alt="American Express and all" class="cardnum">
+            <label for="creditCardNumber">Credit Card Number:</label>
+            <input type="text" name="creditCardNumber" id="creditCardNumber" pattern="[0-9]+" placeholder="123456789"
+                title="Credit card number cannot include alphabet"><br>
+    
+                <!--regular expression is used to validate the anser-->
+            <label for="cvv">CVV:</label>
+            <input type="text" name="cvv" id="cvv" placeholder="123" pattern="[0-9]{3,4}" title="CVV must be 3 or 4 digits"><br>
+    
+            <!-- regular experession for ex[iry date is(0[1-9]|1[0-2])\/20[0-9]{2}]-->
+            <!--https://regex101.com/library/AFarfB-->
+            <label for="expiryDate">Expiry Date:</label>
+            <input type="text" name="expiryDate" id="expiryDate" placeholder="MM/YYYY" pattern="(0[1-9]|1[0-2])\/20[0-9]{2}"
+                title="Invalid expiry date format (MM/YYYY)"><br>
+        </div>
+        </fieldset>
+
+        <!-- Another type submit function-->
+        <button type="submit">Place Order</button>
+    </form>
+
+    
+    <footer>
+        <p>© 2023 Sweet Life. All rights reserved. 224, San Serif Rd, London</p>
+    </footer>
+</body>
